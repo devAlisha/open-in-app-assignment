@@ -9,7 +9,7 @@ import { Menu, Transition } from '@headlessui/react';
 import Chart from './Chart';
 import Chart2 from './Chart2';
 import Modal from './Modal';
-import { IoLogoWhatsapp } from 'react-icons/io5';
+import { IoLogoWhatsapp, IoLogoYoutube } from 'react-icons/io5';
 const Dashboard = () => {
     const user = useSelector(selectUser);
     const dispatch = useDispatch();
@@ -243,7 +243,7 @@ const Dashboard = () => {
                                                     }
                                                     {
                                                         profile.instagram && <div className='mb-4 flex'>
-                                                            <img src='\chat.svg' alt="chat Icon" className='mr-5' />
+                                                           <IoLogoYoutube className='mr-5 w-5 h-5 text-red-500' />
 
                                                             <div className='text-sm text-gray-500 text-start text-lg font-normal'>
                                                                 {profile.instagram}
