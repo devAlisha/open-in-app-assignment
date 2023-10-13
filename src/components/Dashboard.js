@@ -124,16 +124,16 @@ const Dashboard = () => {
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95"
                                 >
-                                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                         <Menu.Item>
                                             <div className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-start cursor-pointer" role="menuitem">
                                                 Welcome, {user.displayName}
                                             </div>
                                         </Menu.Item>
                                         <Menu.Item>
-                                            <button onClick={handleLogout} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                            <div onClick={handleLogout} className="block w-full text-start cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                                                 Sign Out
-                                            </button>
+                                            </div>
                                         </Menu.Item>
                                     </Menu.Items>
                                 </Transition>
@@ -213,7 +213,7 @@ const Dashboard = () => {
                                             <div className='text-3xl font-bold text-start'>
                                                 {profile.name}
                                             </div>
-                                           
+
                                             <div className=' w-full '>
                                                 <div className='flex justify-start mt-16 gap-20'>
 
@@ -233,19 +233,23 @@ const Dashboard = () => {
                                                 </div>
                                                 <div className='flex justify-start mt-8 gap-20'>
 
-                                                    <div className='mb-4 flex'>
-                                                        <img src='\Software.svg' alt="software Icon" className='mr-5' />
-                                                        <div className='text-sm text-gray-500 text-start text-lg font-normal'>
-                                                            {profile.youtube}
+                                                    {
+                                                        profile.youtube && <div className='mb-4 flex'>
+                                                            <img src='\Software.svg' alt="software Icon" className='mr-5' />
+                                                            <div className='text-sm text-gray-500 text-start text-lg font-normal'>
+                                                                {profile.youtube}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div className='mb-4 flex'>
-                                                        <img src='\chat.svg' alt="chat Icon" className='mr-5' />
+                                                    }
+                                                    {
+                                                        profile.instagram && <div className='mb-4 flex'>
+                                                            <img src='\chat.svg' alt="chat Icon" className='mr-5' />
 
-                                                        <div className='text-sm text-gray-500 text-start text-lg font-normal'>
-                                                            {profile.instagram}
+                                                            <div className='text-sm text-gray-500 text-start text-lg font-normal'>
+                                                                {profile.instagram}
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>

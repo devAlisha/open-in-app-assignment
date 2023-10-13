@@ -14,9 +14,9 @@ function App() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        dispatch(setUser(user)); // Dispatch the setUser action with the authenticated user
+        dispatch(setUser(user)); 
       } else {
-        dispatch(clearUser()); // Dispatch the clearUser action if no user is authenticated
+        dispatch(clearUser()); 
       }
     });
 
